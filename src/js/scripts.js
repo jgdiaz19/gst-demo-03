@@ -100,7 +100,11 @@ function initBionick() {
     h.owlCarousel({
         items: 1,
         nav: false,
-        autoHeight: true
+        autoplay: true,
+        loop: true,
+        autoplayTimeout:5000,
+        autoplayHoverPause:true,
+        autoHeight: false
     });
     $(".single-slider-holder a.next-slide").on("click", function() {
         $(this).closest(".single-slider-holder").find(h).trigger("next.owl.carousel");
@@ -112,6 +116,10 @@ function initBionick() {
     sc.owlCarousel({
         items: 3,
         nav: false,
+        autoplay: true,
+        loop: true,
+        autoplayTimeout:5000,
+        autoplayHoverPause:true,
         responsiveClass: true,
         responsive: {
             0: {
@@ -141,7 +149,12 @@ function initBionick() {
     var fw = $(".fwslider");
     fw.owlCarousel({
         items: 1,
-        nav: false
+        nav: false,
+        autoplay: true,
+        loop: true,
+        autoplayTimeout:5000,
+        autoplayHoverPause:true,
+        animateOut: 'fadeOut'
     });
     $(".fwslider-holder a.next-slide").on("click", function() {
         $(this).closest(".fwslider-holder").find(fw).trigger("next.owl.carousel");
@@ -491,3 +504,9 @@ $(document).ready(function() {
     initBionick();
     initparallax();
 });
+function final() {
+    $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+}
+function portalProv() {
+    window.open('http://207.244.226.77/gst/', '_blank');
+}
